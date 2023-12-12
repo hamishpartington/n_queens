@@ -1,0 +1,7 @@
+I realised that each solution will be some permutation of the number 1 to N.
+
+So, for the extension I generated all permutations of 1 to N recursively and stored them in a 1D array. I then step through this array in chunks of N to check whether any of these are solutions. Each solution is stored in a structure and added to a linked list collection with the root of the collection storing a pointer to the start of the list and the number of solutions. This method was significanly faster than the base method generating solutions for a 10x10 board in 0.07 seconds.
+
+I used dynamic memory allocation both for the linked list collection of solutions and for the 1D array of permutations.
+
+In the extension I also display the solutions graphically using SDL. When the program is run, the number of solutions is printed to the console and (if there are solutions) an SDL window of an appropriate size to display and NxN chess board is created with a chessboard displaying the first solution rendered to it. I chose to represent queens as red squares. On pressing any key on the keyboard, the next solution board is rendered to the SDL window and the solution string of that board is printed to the console. The program will run either until the user closes the SDL window or after the user has pressed through all solutions.
